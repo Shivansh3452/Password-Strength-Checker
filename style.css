@@ -1,15 +1,162 @@
-.progress-bar{
-    transition: widtg 0.3s ease;
+/* Base styling */
+body {
+  background: linear-gradient(to right, #e6f0ff, #f0f9ff);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.progress-bar.weak{
-    background-color: #f00;
+
+/* Card-like container */
+.container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  transition: background-color 0.3s ease;
 }
-.progress-bar.medium{
-    background-color: #ffa500;
+
+/* Heading */
+h2 {
+  color: #286ed8;
 }
-.progress-bar.strong{
-    background-color: #28a745;
+
+/* Form label */
+.form-label {
+  font-weight: 600;
+  color: #333;
 }
+
+/* Input field */
+.form-control {
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Input group layout */
+.input-group {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-group .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: hsl(240, 20%, 95%);
+  color: #373ae9;
+  font-weight: 500;
+  z-index: 0;
+  min-width: 70px;
+}
+
+/* Progress bar animation */
 #password-strength-meter .progress-bar {
-  transition: width 0.3s ease-in-out;
+  transition: width 0.4s ease;
+}
+
+/* Strength label */
+#strength-label {
+  font-weight: bold;
+}
+
+/* Password tips */
+#password-tips {
+  margin-top: 1rem;
+}
+
+#password-tips li {
+  font-size: 0.95rem;
+  border: none;
+  background: transparent;
+  padding-left: 0;
+}
+
+#password-tips li.valid::before {
+  content: "✔ ";
+  color: green;
+}
+
+#password-tips li.invalid::before {
+  content: "✘ ";
+  color: red;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+  background: linear-gradient(to right, #121212, #1e1e1e);
+  color: #f1f1f1;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .form-label {
+  color: #dddddd;
+}
+
+body.dark-mode .form-control {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #444;
+}
+
+body.dark-mode .form-control:focus {
+  background-color: #333;
+  color: #fff;
+  border-color: #888;
+  box-shadow: 0 0 0 0.2rem rgba(200, 200, 255, 0.2);
+}
+
+body.dark-mode ::placeholder {
+  color: #bbb;
+  opacity: 1;
+}
+
+body.dark-mode .btn {
+  background-color: #1d1d1dc5;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+  border-color: #777;
+}
+
+body.dark-mode #strength-label {
+  color: #dddddd;
+}
+
+body.dark-mode #password-tips li {
+  color: #ccc;
+}
+
+body.dark-mode #password-tips li.valid::before {
+  color: #00e676;
+}
+
+body.dark-mode #password-tips li.invalid::before {
+  color: #ff5252;
+}
+
+/* Emoji bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+#strength-label.animated {
+  animation: bounce 0.4s ease-in-out;
+}
+#password {
+  padding-right: 23px; /* You can adjust this based on button width */
 }
