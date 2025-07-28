@@ -1,0 +1,15 @@
+.progress-bar{
+    transition: widtg 0.3s ease;
+}
+.progress-bar.weak{
+    background-color: #f00;
+}
+.progress-bar.medium{
+    background-color: #ffa500;
+}
+.progress-bar.strong{
+    background-color: #28a745;
+}
+#password-strength-meter .progress-bar {
+  transition: width 0.3s ease-in-out;
+}
